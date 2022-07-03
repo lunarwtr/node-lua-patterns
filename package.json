@@ -1,0 +1,43 @@
+{
+  "name": "lua-patterns",
+  "version": "1.0.0",
+  "description": "LUA Pattern Capabilities",
+  "main": "dist/index.js",
+  "scripts": {
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "lint": "eslint src --ext ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lunarwtr/node-lua-patterns.git"
+  },
+  "author": "lunarwtr",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lunarwtr/node-lua-patterns/issues"
+  },
+  "homepage": "https://github.com/lunarwtr/node-lua-patterns#readme",
+  "dependencies": {
+    "ffi-napi": "^4.0.3",
+    "ref-array-napi": "^1.2.2",
+    "ref-napi": "^3.0.3",
+    "ref-struct-napi": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/ffi-napi": "^4.0.5",
+    "@types/node": "14.x",
+    "@types/ref-array": "^0.0.28",
+    "@types/ref-array-di": "^1.2.3",
+    "@types/ref-napi": "^3.0.4",
+    "@types/ref-struct": "^0.0.29",
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
+    "eslint": "^8.9.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.5",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2"
+  }
+}
