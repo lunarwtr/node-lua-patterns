@@ -36,7 +36,6 @@
 #include <stddef.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdio.h>
 
 #include "patterns.h"
 
@@ -695,8 +694,6 @@ str_match(const char *string, const char *pattern, struct str_match *m,
 			*errstr = strerror(errno);
 			str_match_free(m);
 			return (-1);
-		} else {
-			printf("Match value = %s\n", m->sm_match[i]);
 		}
 	}
 
@@ -713,35 +710,4 @@ str_match_free(struct str_match *m)
 	free(m->sm_match);
 	m->sm_match = NULL;
 	m->sm_nmatch = 0;
-}
-
-
-struct str_match *
-str_match_retmatch(const char *string, const char *pattern,
-    const char **errstr)
-{
-	struct str_match *m = malloc(sizeof(struct str_match));
-	int rval = str_match(string, pattern, m, errstr);
-	if (rval == 0) {
-		return m;
-	}
-	free(m);
-	return NULL;
-}
-
-int
-str_match_derp(const char *string, const char *pattern,
-    char **matches, unsigned int* size,
-	const char **errstr)
-{
-	struct str_match *m = malloc(sizeof(struct str_match));
-	m->sm_match = matches;
-	m->sm_nmatch = 0;
-	int rval = str_match(string, pattern, m, errstr);
-	if (rval == 0) {
-		//unsigned int *s = malloc(sizeof(unsigned int));
-		*size = m->sm_nmatch;
-	}
-	free(m);
-	return rval;
 }
